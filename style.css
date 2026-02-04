@@ -1,0 +1,81 @@
+.half {
+    display: flex;          /* Enable flex layout */
+    flex-direction: row; /* default for desktop */
+    gap: 10px;               /* Optional: space between children */
+}
+
+.half > div {
+    flex: 1;                 /* Each child takes equal width */
+}
+
+/* For mobile screens */ 
+@media (max-width: 768px) { 
+    .half { 
+        flex-direction: column; /* stack items vertically */ 
+    } 
+}
+
+.text { flex: 1; display: flex; /* make each item a flex container */ 
+    justify-content: center; /* center horizontally */ 
+    align-items: center; /* center vertically */ 
+    /* height: 150px;  */
+    /* background: lightblue;  */
+    text-align: center; 
+    color: darkblue; /* text color */ 
+    font-size: 1.5rem; /* bigger text */ 
+    font-weight: bold; /* make it stand out */ 
+    letter-spacing: 2px;
+}
+
+/* Base button style */
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Default button */
+.btn {
+  background-color: lightblue;
+  color: darkblue;
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: darkblue;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Outline button */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid darkblue;
+  color: darkblue;
+}
+
+.btn-outline:hover {
+  background-color: darkblue;
+  color: transparent;
+}
+
+.btn-outline:hover::after { 
+    content: "YES";
+    color: white;
+    transform: translate(-50%, -50%); 
+    opacity: 1; /* show hover text */
+}
+
+.btn-container { 
+    display: flex; 
+    justify-content: space-between; /* pushes buttons to edges */ 
+    align-items: center; 
+    padding: 20px; 
+}
